@@ -7,8 +7,9 @@ import FirstApp from './FirstApp';
 
 export const HelloWordApp = () => {
   return (
-    <h2>HelloWord:
-        <FirstApp />
-    </h2>
+  <>
+    <h1>HelloWord:</h1>
+    <FirstApp />
+  </>
   )
 }
