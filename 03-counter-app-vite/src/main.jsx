@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {HelloWordApp} from './HelloWordApp'
+import CounterApp from './CounterApp'
 
 ReactDOM.createRoot( document.getElementById('root') ).render(
     <React.StrictMode>
-        <HelloWordApp />
-    </React.StrictMode> 
+        <CounterApp value={12}/>
+    </React.StrictMode>
 )
