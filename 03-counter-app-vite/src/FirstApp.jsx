@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './style.css';
 
 const message = {
@@ -8,11 +9,17 @@ const message = {
     }
 }
 
-export default function FirstApp() {
+
+export default function FirstApp( {title, subtitle} ) {
+ 
     return (
     <>
-        <div>FirstApp</div>
+        <div>{title}</div>
         <p>{ message.getMessage() }</p>
     </>
     )
 }
+
+FirstApp.propTypes = {
+    title: PropTypes.string.isRequired
+};

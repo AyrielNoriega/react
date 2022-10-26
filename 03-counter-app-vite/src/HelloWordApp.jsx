@@ -9,7 +9,7 @@ export const HelloWordApp = () => {
   return (
   <>
     <h1>HelloWord:</h1>
-    <FirstApp />
+    <FirstApp title='Hola Ayriel' subtitle={123}/>
   </>
   )
 }
