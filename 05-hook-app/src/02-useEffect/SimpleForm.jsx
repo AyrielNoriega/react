@@ -19,8 +19,16 @@ export const SimpleForm = () => {
 
     useEffect(() => {
         console.log('effect');
-    });
-    
+    }, []);
+
+    useEffect(() => {
+        console.log('effect formState');
+    }, [formState]);
+
+    useEffect(() => {
+        console.log('effect formState email');
+    }, [email]);
+
 
     return (
         <>
