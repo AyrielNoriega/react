@@ -1,12 +1,12 @@
-import { UseCounter } from "../Hooks/UseCounter";
-import { useFetch } from "../Hooks/useFetch"
+import { UseCounter, useFetch } from "../Hooks";
+import { LoadingQuote, Quote } from "./";
 
 export const MultipleCustomHooks = () => {
 
     const { counter, increment, decrement } = UseCounter( 1 );
 
     const { data, isLoading, hasError } = useFetch(`https://www.breakingbadapi.com/api/quotes/${ counter }`);
-    console.log({data, isLoading, hasError});
+
     const { author, quote } = !!data && data[0];
 
     // if ( isLoading) { //alternativa para Message Loading
@@ -26,19 +26,22 @@ export const MultipleCustomHooks = () => {
             <h1>Bracking Quotes</h1>
 
             {
-                ( isLoading )
-                    ? (
-                        <div className="alert alert-info text-center">
-                            Loading...
-                        </div>
-                    )
-                    : (
-                        <blockquote className="blockquote text-end">
-                            <p className="mb-1">{ quote }</p>
-                            <footer className="blockquote-footer"> { author }</footer>
-                        </blockquote>
-                    )
+                //( isLoading )
+                //    ? (
+                //        <div className="alert alert-info text-center">
+                //            Loading...
+                //        </div>
+                //    )
+                //    : (
+                //        <blockquote className="blockquote text-end">
+                //            <p className="mb-1">{ quote }</p>
+                //            <footer className="blockquote-footer"> { author }</footer>
+                //        </blockquote>
+                //    )
 
+                    isLoading
+                    ? <LoadingQuote />
+                    :   <Quote author={ author } quote={ quote } />
             }
 
             <button
