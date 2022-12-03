@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { CallbackHook } from './06-memos/CallbackHook'
+import { Padre } from './07-tarea-memo/Padre'
+// import { CallbackHook } from './06-memos/CallbackHook'
 // import { MemorizeHook } from './06-memos/MemorizeHook'
 // import { Memorize } from './06-memos/Memorize'
 // import { Loyout } from './05-useLayoutEffect/Layout'
@@ -16,6 +17,6 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <CallbackHook />
+    <Padre />
   // </React.StrictMode>
 )
