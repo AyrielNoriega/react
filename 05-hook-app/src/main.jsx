@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { TodoApp } from './08-useReducer/TodoApp'
+import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import { AboutPage } from './09-useContext/AboutPage';
+
+import { MainApp } from './09-useContext/MainApp'
+// import { TodoApp } from './08-useReducer/TodoApp'
 // import { Padre } from './07-tarea-memo/Padre'
 // import { CallbackHook } from './06-memos/CallbackHook'
 // import { MemorizeHook } from './06-memos/MemorizeHook'
@@ -17,9 +21,22 @@ import { TodoApp } from './08-useReducer/TodoApp'
 
 import './index.css'
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:  <MainApp />,
+  },
+  {
+    path: "/about",
+    element:  <AboutPage />,
+  },
+]);
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <TodoApp />
+    // <MainApp />
+    <RouterProvider router={router} />
   // </React.StrictMode>
 )
