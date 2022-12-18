@@ -1,7 +1,12 @@
+import { Navbar } from "./Navbar"
 
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+        HomePage
+        <hr/>
+        <Navbar />
+    </div>
   )
 }

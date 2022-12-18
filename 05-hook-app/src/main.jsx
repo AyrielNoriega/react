@@ -1,8 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {createBrowserRouter,RouterProvider} from "react-router-dom";
-import { AboutPage } from './09-useContext/AboutPage';
-
 import { MainApp } from './09-useContext/MainApp'
 // import { TodoApp } from './08-useReducer/TodoApp'
 // import { Padre } from './07-tarea-memo/Padre'
@@ -21,22 +18,11 @@ import { MainApp } from './09-useContext/MainApp'
 
 import './index.css'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element:  <MainApp />,
-  },
-  {
-    path: "/about",
-    element:  <AboutPage />,
-  },
-]);
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    // <MainApp />
-    <RouterProvider router={router} />
+    <MainApp />
   // </React.StrictMode>
 )

@@ -1,7 +1,14 @@
+import { Navbar } from "./Navbar"
 
 
 export const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <>
+        AboutPage
+        <hr/>
+        
+        <Navbar />
+
+    </>
   )
 }
