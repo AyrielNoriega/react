@@ -1,7 +1,8 @@
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { UseProvider } from './context/UseProvider';
 import { AboutPage } from './AboutPage';
 import { LoginPage } from './LoginPage';
 import { HomePage } from './HomePage';
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { Navbar } from './Navbar';
 
 const router = createBrowserRouter([
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
 
 export const MainApp = () => {
   return (
-    <>
+    <UseProvider>
         <h1>MainApp</h1>
         <hr />
         <RouterProvider router={router} />
-    </>
+    </UseProvider>
   )
 }
