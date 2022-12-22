@@ -1,13 +1,29 @@
 import {
     createBrowserRouter,
+    Navigate,
     RouterProvider,
 } from "react-router-dom";
+import { LoginPage } from "../auth/pages/LoginPage";
+import { DcPage } from "../heroes/pages/DcPage";
+import { MarvelPage } from "../heroes/pages/MarvelPage";
 import { HeroesApp } from '../HeroesApp';
 
 
-export const router = createBrowserRouter([
+export const AppRouter = createBrowserRouter([
+    {
+        path: "marvel",
+        element: <MarvelPage />,
+    },
+    {
+        path: "dc",
+        element: <DcPage />,
+    },
+    {
+        path: "login",
+        element: <LoginPage />,
+    },
     {
         path: "/",
-        element: <HeroesApp />,
+        element: <Navigate  to="marvel" />,
     },
 ]);
