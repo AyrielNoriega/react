@@ -1,6 +1,10 @@
+import { Navbar } from "../../ui"
 
 export const DcPage = () => {
   return (
-    <div>DcPages</div>
+    <>
+      <Navbar />
+      DcPages
+    </>
   )
 }

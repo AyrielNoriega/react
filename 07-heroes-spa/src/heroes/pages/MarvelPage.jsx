@@ -1,6 +1,10 @@
+import {Navbar} from '../../ui'
 
 export const MarvelPage = () => {
   return (
-    <div>MarvelPage</div>
+    <>
+      <Navbar />
+      MarvelPage
+    </>
   )
 }
