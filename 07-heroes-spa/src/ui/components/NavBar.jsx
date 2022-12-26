@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, Outlet } from "react-router-dom"
 
 
 export const Navbar = () => {
@@ -28,10 +28,22 @@ export const Navbar = () => {
               </NavLink>
               <NavLink
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
+                to="search"
+              >
+                Search
+              </NavLink>
+              <NavLink
+                className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
+                to="hero"
+              >
+                Hero
+              </NavLink>
+              {/* <NavLink
+                className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                 to="/login"
               >
                 Login
-              </NavLink>
+              </NavLink> */}
             </ul>
           </div>
           <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent2">
@@ -52,6 +64,10 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      <div className="container">
+        <Outlet />
+      </div>
     </>
   )
 }

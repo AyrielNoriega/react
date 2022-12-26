@@ -1,17 +1,32 @@
 import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
 import { LoginPage } from "../auth";
-import { DcPage, MarvelPage } from "../heroes";
+import { DcPage, HeroPage, MarvelPage, SearchPage } from "../heroes";
 import { HeroesApp } from '../HeroesApp';
+import { Navbar } from "../ui";
 
 
 export const AppRouter = createBrowserRouter([
     {
-        path: "marvel",
-        element: <MarvelPage />,
-    },
-    {
-        path: "dc",
-        element: <DcPage />,
+        path: "/",
+        element: <Navbar />,
+        children: [
+            {
+              path: "marvel",
+              element: <MarvelPage />,
+            },
+            {
+                path: "dc",
+                element: <DcPage />,
+            },
+            {
+                path: "search",
+                element: <SearchPage />,
+            },
+            {
+                path: "hero",
+                element: <HeroPage />,
+            },
+        ],
     },
     {
         path: "login",

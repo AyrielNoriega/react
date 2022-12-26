@@ -3,8 +3,9 @@ import {Navbar} from '../../ui'
 export const MarvelPage = () => {
   return (
     <>
-      <Navbar />
-      MarvelPage
+      <h2>
+        MarvelPage
+      </h2>
     </>
   )
 }
