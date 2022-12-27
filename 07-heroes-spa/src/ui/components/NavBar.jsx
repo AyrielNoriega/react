@@ -1,7 +1,16 @@
-import { Link, NavLink, Outlet } from "react-router-dom"
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom"
 
 
 export const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    navigate('login', {
+      replace: true
+    })
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,13 +27,13 @@ export const Navbar = () => {
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                 to="/marvel"
               >
-                Home
+                Marvel
               </NavLink>
               <NavLink
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                 to="/dc"
               >
-                About
+                DC
               </NavLink>
               <NavLink
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
@@ -56,7 +65,8 @@ export const Navbar = () => {
               </NavLink>
               <NavLink
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
-                to="/logout"
+                to="/login"
+                onClick={ onLogout }
               >
                 Logout
               </NavLink>

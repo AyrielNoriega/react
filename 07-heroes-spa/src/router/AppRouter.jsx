@@ -1,5 +1,5 @@
 import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
-import { LoginPage } from "../auth";
+import { LoginPage, LogoutPage } from "../auth";
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../heroes";
 import { HeroesApp } from '../HeroesApp';
 import { Navbar } from "../ui";
@@ -31,6 +31,10 @@ export const AppRouter = createBrowserRouter([
     {
         path: "login",
         element: <LoginPage />,
+    },
+    {
+        path: "logout",
+        element: <LogoutPage />,
     },
     {
         path: "/",

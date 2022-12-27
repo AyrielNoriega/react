@@ -1,9 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../ui"
 
 export const LoginPage = () => {
+
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    console.log('onligin');
+    navigate('/', {
+      replace: true
+    })
+  }
+
   return (
-    <>
-      LoginPage
-    </>
+    <div className="container mt-5">
+      <h1>Login</h1>
+      <hr />
+
+      <button
+        className="btn btn-primary"
+        onClick={onLogin}
+        >
+        Login
+      </button>
+    </div>
   )
 }
