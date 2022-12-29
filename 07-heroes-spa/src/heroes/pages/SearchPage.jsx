@@ -2,6 +2,7 @@ import queryString from 'query-string';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm'
 import { HeroCard } from '../components'
+import { Alert } from '../components/Alert';
 import { getHeroesByName } from '../helpers';
 
 export const SearchPage = () => {
@@ -18,7 +19,7 @@ export const SearchPage = () => {
 
     const onSearchSubmit = (event) => {
         event.preventDefault();
-        if (searchText.trim().length <= 1) return;
+        // if (searchText.trim().length <= 1) return;
 
         navigate(`?q=${searchText}`);
 
@@ -51,12 +52,7 @@ export const SearchPage = () => {
                     <h4>Results</h4>
                     <hr />
 
-                    <div className="alert alert-primary">
-                        Search a hero
-                    </div>
-                    <div className="alert alert-danger">
-                        No hero with <b>{ q }</b>
-                    </div>
+                    <Alert q={q} heroes={heroes}/>
 
                     {
                         heroes.map(hero => (
