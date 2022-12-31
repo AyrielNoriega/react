@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../auth/context/AuthContext";
 
 
 export const Navbar = () => {
+
+  const { user } = useContext( AuthContext);
+  console.log(user);
 
   const navigate = useNavigate();
 
@@ -61,7 +66,7 @@ export const Navbar = () => {
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                 to="/dc"
               >
-                Ayriel
+                {user?.name}
               </NavLink>
               <NavLink
                 className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
