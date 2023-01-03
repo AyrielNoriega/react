@@ -3,6 +3,8 @@ import { LoginPage, LogoutPage } from "../auth";
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../heroes";
 import { HeroesApp } from '../HeroesApp';
 import { Navbar } from "../ui";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 
 export const AppRouter = createBrowserRouter([
@@ -12,32 +14,32 @@ export const AppRouter = createBrowserRouter([
         children: [
             {
               path: "marvel",
-              element: <MarvelPage />,
+              element: <PrivateRoute><MarvelPage /></PrivateRoute>,
             },
             {
                 path: "dc",
-                element: <DcPage />,
+                element: <PrivateRoute><DcPage /></PrivateRoute>,
             },
             {
                 path: "search",
-                element: <SearchPage />,
+                element: <PrivateRoute><SearchPage /></PrivateRoute>,
             },
             {
                 path: "hero/:id",
-                element: <HeroPage />,
+                element: <PrivateRoute><HeroPage /></PrivateRoute>,
             },
         ],
     },
     {
         path: "login",
-        element: <LoginPage />,
+        element: <PublicRoute><LoginPage /></PublicRoute>,
     },
     {
         path: "logout",
-        element: <LogoutPage />,
+        element: <PublicRoute><LogoutPage /></PublicRoute>,
     },
     {
         path: "/",
-        element: <Navigate  to="marvel" />,
+        element: <PublicRoute><Navigate  to="marvel" /></PublicRoute>,
     },
 ]);
