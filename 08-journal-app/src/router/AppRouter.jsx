@@ -7,23 +7,18 @@ import { JournalRoutes } from '../journal/routes/JournalRoutes';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-    <Route path="/auth" >
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-    </Route>
-    // <Route path="/*" >
-    //     <Route path="/" element={<JournalPage />}/>
-    //     <Route path="/*" element={<Navigate to="/" />}/>
-    // </Route>,
+        <Route path="/" element={<JournalPage />} >,
+            <Route path="/auth" >
+                <Route path="/auth/login" element={<LoginPage />} />
+                <Route path="/auth/register" element={<RegisterPage />} />
+            </Route>
+        </Route>
     )
 );
+
 
 export const AppRouter = () => {
     return (
         <RouterProvider router={router} />
-        // <Routes>
-        //     <Route path="/auth/*" alement={<AuthRoutes />}/>
-        //     <Route path="/*" alement={<JournalRoutes />}/>
-        // </Routes>
     )
 }
