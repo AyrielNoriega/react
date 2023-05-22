@@ -13,8 +13,8 @@ export const AppRouter = createBrowserRouter([
         element: <Navbar />,
         children: [
             {
-              path: "marvel",
-              element: <PrivateRoute><MarvelPage /></PrivateRoute>,
+                path: "marvel",
+                element: <PrivateRoute><MarvelPage /></PrivateRoute>,
             },
             {
                 path: "dc",
