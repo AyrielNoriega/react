@@ -47,14 +47,14 @@ return (
                         >
                             Search
                         </NavLink>
-                        <NavLink
+                        {/*<NavLink
                             className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                             to="hero"
                         >
                             Hero
-                        </NavLink>
+                        </NavLink>*/}
                         {/* <NavLink
-                            className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
+                           className={ ({isActive}) => `nav-link ${isActive ? 'active' : ''}`}
                             to="/login"
                         >
                             Login
