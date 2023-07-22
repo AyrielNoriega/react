@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from './store/slices/counter';
+import { decrement, increment, incrementByAmount } from './store/slices/counter';
 import './App.css';
 
 function App() {
@@ -27,6 +27,9 @@ function App() {
         </button>
         <button onClick={() => dispatch(decrement())}>
           count - is {counter}
+        </button>
+        <button onClick={() => dispatch(incrementByAmount(Number(2)))}>
+          count by 2 is {counter}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
